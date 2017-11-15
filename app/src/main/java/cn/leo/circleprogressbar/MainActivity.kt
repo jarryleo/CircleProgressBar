@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         val nodeProgressBar = findViewById<NodeProgressBar>(R.id.npb_node)
-        nodeProgressBar.setNodes(arrayOf("How", "Are", "You"))
+        nodeProgressBar.setNodes(arrayOf("投保信息", "确认投保", "支付"))
         nodeProgressBar.setProgress(2)
 
         val circleProgressBar = findViewById<CircleProgressBar>(R.id.cpb_progress)
         object : CountDownTimer(15000, 10) {
             override fun onFinish() {
-                //this.start()
+                this.start()
             }
 
             override fun onTick(millisUntilFinished: Long) {

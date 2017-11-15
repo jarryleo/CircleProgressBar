@@ -19,7 +19,14 @@
     <cn.leo.circleprogressbar.view.NodeProgressBar
         android:id="@+id/npb_node"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_margin="8dp"/>
+
+    <cn.leo.circleprogressbar.view.LeoClock
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="120dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="120dp"/>
 
 </RelativeLayout>
