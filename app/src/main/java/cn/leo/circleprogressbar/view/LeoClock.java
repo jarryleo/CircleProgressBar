@@ -6,15 +6,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
-import android.text.format.Time;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 /**
  * Created by Leo on 2017/11/15.
@@ -70,7 +66,6 @@ public class LeoClock extends View {
         hour = calendar.get(Calendar.HOUR_OF_DAY);
         minute = calendar.get(Calendar.MINUTE);
         second = calendar.get(Calendar.SECOND);
-        Log.e("second", hour + ":" + minute + ":" + second);
         float x, y;
         //绘制表盘
         paint.setColor(boardColor);
