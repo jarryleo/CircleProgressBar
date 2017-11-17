@@ -1,12 +1,16 @@
 package cn.leo.circleprogressbar
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.support.v7.app.AppCompatActivity
+import android.widget.TextView
+import android.widget.Toast
 import cn.leo.circleprogressbar.view.CircleProgressBar
+import cn.leo.circleprogressbar.view.ClickStringUtil
 import cn.leo.circleprogressbar.view.NodeProgressBar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ClickStringUtil.onTextClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,5 +34,14 @@ class MainActivity : AppCompatActivity() {
             }
 
         }.start()
+
+        val textView = findViewById<TextView>(R.id.tv_text)
+        ClickStringUtil.setClickText(textView, Color.RED, this, 16, 22, 23, 29)
     }
+
+    override fun onClick(text: String?) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
+
 }

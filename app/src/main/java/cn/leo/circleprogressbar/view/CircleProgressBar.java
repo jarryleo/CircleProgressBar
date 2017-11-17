@@ -17,6 +17,7 @@ public class CircleProgressBar extends View {
 
     private Paint mPaint;
     private int mColor;
+    private int mBackColor;
     private RectF mRectF;
     private int mStrokeWidth;
     private float mStartAngle;
@@ -38,6 +39,7 @@ public class CircleProgressBar extends View {
     private void init() {
         mStrokeWidth = 15;
         mColor = Color.CYAN;
+        mBackColor = Color.RED;
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(mColor);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -60,6 +62,9 @@ public class CircleProgressBar extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        mPaint.setColor(mBackColor);
+        canvas.drawArc(mRectF, 0f, 360f, false, mPaint);
+        mPaint.setColor(mColor);
         canvas.drawArc(mRectF, mStartAngle, mSweepAngle, false, mPaint);
     }
 
@@ -84,6 +89,11 @@ public class CircleProgressBar extends View {
 
     public void setColor(int color) {
         mColor = color;
+        postInvalidate();
+    }
+
+    public void setBackColor(int backColor) {
+        mBackColor = backColor;
         postInvalidate();
     }
 

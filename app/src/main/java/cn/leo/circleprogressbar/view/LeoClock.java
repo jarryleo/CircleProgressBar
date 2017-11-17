@@ -119,7 +119,5 @@ public class LeoClock extends View {
                 this.start();
             }
         }.start();
-
     }
-
 }
