@@ -6,8 +6,6 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,7 +22,7 @@ public class ClickStringUtil {
      * @param listener  点击回调（回调参数为点击文字的内容，可根据文字执行不同动作）
      * @param position  可点击文字起始和终止位置，2个一组
      */
-    public static void setClickText(TextView textView, final int textColor, final onTextClickListener listener, int... position) {
+    public static void setClickText(TextView textView, final int textColor, final boolean underline, final onTextClickListener listener, int... position) {
         String text = textView.getText().toString();
         SpannableString spannableString = new SpannableString(text);
         if (position.length % 2 != 0) return;
@@ -44,7 +42,7 @@ public class ClickStringUtil {
                 @Override
                 public void updateDrawState(TextPaint ds) {
                     ds.setColor(textColor); //点击文字颜色
-                    ds.setUnderlineText(false);//false去掉下划线
+                    ds.setUnderlineText(underline);//false去掉下划线
                 }
             }, s, e, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             //设置文字的前景色

@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), ClickStringUtil.onTextClickListener {
         }.start()
 
         val textView = findViewById<TextView>(R.id.tv_text)
-        ClickStringUtil.setClickText(textView, Color.RED, this, 16, 22, 23, 29)
+        ClickStringUtil.setClickText(textView, Color.RED, false, this, 16, 22, 23, 29)
     }
 
     override fun onClick(text: String?) {
