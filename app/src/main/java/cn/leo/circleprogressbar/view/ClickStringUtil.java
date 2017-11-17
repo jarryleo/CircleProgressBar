@@ -19,6 +19,7 @@ public class ClickStringUtil {
      *
      * @param textView
      * @param textColor 可点击文字颜色
+     * @param underline 是否要下划线
      * @param listener  点击回调（回调参数为点击文字的内容，可根据文字执行不同动作）
      * @param position  可点击文字起始和终止位置，2个一组
      */
